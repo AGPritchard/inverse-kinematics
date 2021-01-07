@@ -1,8 +1,15 @@
 extends KinematicBody2D
 
+const FEELER_LENGTH := 50
+
 export(float) var speed := 200.0
 
 var velocity := Vector2.ZERO
+
+func _ready() -> void:
+	# set feeler length
+	for feeler in $Feelers.get_children():
+		feeler.cast_to *= FEELER_LENGTH
 
 func _physics_process(_delta: float) -> void:
 	# reset velocity
