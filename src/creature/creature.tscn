@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/creature/creature.gd" type="Script" id=1]
+[ext_resource path="res://src/tentacle/tentacle.tscn" type="PackedScene" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -16,3 +17,17 @@ shape = SubResource( 1 )
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 zoom = Vector2( 0.5, 0.5 )
+
+[node name="Tentacles" type="Node2D" parent="."]
+
+[node name="Tentacle" parent="Tentacles" instance=ExtResource( 2 )]
+position = Vector2( 0, -10 )
+
+[node name="Tentacle2" parent="Tentacles" instance=ExtResource( 2 )]
+position = Vector2( 10, 0 )
+
+[node name="Tentacle3" parent="Tentacles" instance=ExtResource( 2 )]
+position = Vector2( 0, 10 )
+
+[node name="Tentacle4" parent="Tentacles" instance=ExtResource( 2 )]
+position = Vector2( -10, 0 )
