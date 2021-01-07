@@ -59,13 +59,11 @@ func _process(_delta: float) -> void:
 # Given a segment (head, tail) and a target position,
 # calculate a new head and tail position as to set the head to be at the target
 func _reach(head: Vector2, tail: Vector2, target: Vector2) -> Array:
-	var c_dx := tail.x - head.x
-	var c_dy := tail.y - head.y
 	var c_dist := tail.distance_to(head)
+	var s_dist := tail.distance_to(target)
 	
 	var s_dx := tail.x - target.x
 	var s_dy := tail.y - target.y
-	var s_dist := tail.distance_to(target)
 	
 	var line_scale := c_dist / s_dist
 	
