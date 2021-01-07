@@ -27,9 +27,6 @@ func _ready() -> void:
 		
 		# store lines in a list as to update their positions later
 		lines.append(line)
-	
-	# set initial sucker area position to end of tentacle
-	$SuckerArea.position = segments[0]
 
 func _process(_delta: float) -> void:
 	# set base position
@@ -58,9 +55,6 @@ func _process(_delta: float) -> void:
 	for i in segments.size() - 1:
 		lines[i].points[0] = segments[i]
 		lines[i].points[1] = segments[i + 1]
-	
-	# update sucker area position
-	$SuckerArea.position = segments[0]
 
 # Given a segment (head, tail) and a target position,
 # calculate a new head and tail position as to set the head to be at the target
