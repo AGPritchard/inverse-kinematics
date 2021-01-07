@@ -26,6 +26,10 @@ func _ready() -> void:
 		lines.append(line)
 
 func _process(_delta: float) -> void:
+	# set base position
+	var base: Vector2 = segments[-1]
+	
+	# set target
 	var target := get_global_mouse_position()
 	
 	# perform reach in forward direction
@@ -35,6 +39,14 @@ func _process(_delta: float) -> void:
 		segments[i] = reach[0]
 		target = reach[1]
 	segments[-1] = target
+	
+	# perform reach in reverse
+	target = base
+	for i in range(NUM_OF_POINTS - 1, 0, -1):
+		var reach := _reach(segments[i], segments[i-1], target)
+		segments[i] = reach[0]
+		target = reach[1]
+	segments[0] = target
 	
 	# update line points
 	for i in segments.size() - 1:
