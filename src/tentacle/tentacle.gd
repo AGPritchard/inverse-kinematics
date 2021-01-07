@@ -1,7 +1,7 @@
 class_name Tentacle
 extends Node2D
 
-const NUM_OF_POINTS := 16
+const NUM_OF_POINTS := 18
 const SEGMENT_LENGTH := 5
 const SEGMENT_WIDTH := 1
 
