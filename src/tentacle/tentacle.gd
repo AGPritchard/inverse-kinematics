@@ -25,6 +25,19 @@ func _ready() -> void:
 		# store lines in a list as to update their positions later
 		lines.append(line)
 
+func _process(_delta: float) -> void:
+	var target := get_global_mouse_position()
+	
+	# perform reach in forward direction
+	for i in NUM_OF_POINTS - 1:
+		var reach := _reach(segments[i], segments[i+1], target)
+		
+		segments[i] = reach[0]
+		target = reach[1]
+	segments[-1] = target
+	
+
+
 # Given a segment (head, tail) and a target position,
 # calculate a new head and tail position as to set the head to be at the target
 func _reach(head: Vector2, tail: Vector2, target: Vector2) -> Array:
