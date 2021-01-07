@@ -5,3 +5,4 @@ This project is an implementation of the FABRIK (<b>F</b>oward-<b>a</b>nd-<b>B</
 This project was inspired by and adapted from https://sean.cm/a/fabrik-algorithm-2d
 
 The wall asset was used from the µFantasy Tileset by 0x72 (https://0x72.itch.io/microfantasy)
+The font used is m3x6 by Daniel Linssen (https://managore.itch.io/m3x6)
