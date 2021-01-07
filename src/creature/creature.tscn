@@ -36,21 +36,21 @@ position = Vector2( -10, 0 )
 [node name="Feelers" type="Node2D" parent="."]
 
 [node name="Feeler" type="RayCast2D" parent="Feelers"]
-position = Vector2( 0, -10 )
+position = Vector2( 8, -8 )
 enabled = true
-cast_to = Vector2( 0, -1 )
+cast_to = Vector2( 1, -1 )
 
 [node name="Feeler2" type="RayCast2D" parent="Feelers"]
-position = Vector2( 10, 0 )
+position = Vector2( 8, 8 )
 enabled = true
-cast_to = Vector2( 1, 0 )
+cast_to = Vector2( 1, 1 )
 
 [node name="Feeler3" type="RayCast2D" parent="Feelers"]
-position = Vector2( 0, 10 )
+position = Vector2( -8, 8 )
 enabled = true
-cast_to = Vector2( 0, 1 )
+cast_to = Vector2( -1, 1 )
 
 [node name="Feeler4" type="RayCast2D" parent="Feelers"]
-position = Vector2( -10, 0 )
+position = Vector2( -8, -8 )
 enabled = true
-cast_to = Vector2( -1, 0 )
+cast_to = Vector2( -1, -1 )
