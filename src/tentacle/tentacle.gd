@@ -36,7 +36,10 @@ func _process(_delta: float) -> void:
 		target = reach[1]
 	segments[-1] = target
 	
-
+	# update line points
+	for i in segments.size() - 1:
+		lines[i].points[0] = segments[i]
+		lines[i].points[1] = segments[i + 1]
 
 # Given a segment (head, tail) and a target position,
 # calculate a new head and tail position as to set the head to be at the target
