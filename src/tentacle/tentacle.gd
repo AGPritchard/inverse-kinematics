@@ -8,6 +8,8 @@ const SEGMENT_WIDTH := 1
 var segments := []
 var lines := []
 
+var end_point := Vector2.ONE	#set to (1, 1) as to avoid dividing by zero in _reach
+
 func _ready() -> void:
 	# create a list of segments (a list of points)
 	for i in NUM_OF_POINTS:
@@ -33,8 +35,8 @@ func _process(_delta: float) -> void:
 	# set base position
 	var base: Vector2 = segments[-1]
 	
-	# set target
-	var target := get_global_mouse_position()
+	# convert target to local coordinate system
+	var target := to_local(end_point)
 	
 	# perform reach in forward direction
 	for i in NUM_OF_POINTS - 1:
